@@ -1,0 +1,25 @@
+<html>
+<head>
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  <script type='text/javascript'>
+   google.load('visualization', '1', {'packages': ['geochart']});
+   google.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Country');
+      data.addColumn('number', 'Popularity');
+      data.addRows(%(data)s);
+
+      var options = %(options)s;
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+  };
+  </script>
+</head>
+<body>
+  <div id='chart_div' style="width: %(width)s; height: %(height)s; margin-left:auto; margin-right:auto;"></div>
+</body>
+
+</html>
