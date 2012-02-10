@@ -2,18 +2,17 @@
 <head>
   <script type='text/javascript' src='https://www.google.com/jsapi'></script>
   <script type='text/javascript'>
-   google.load('visualization', '1', {'packages': ['geochart']});
+   google.load('visualization', '1', {'packages': %(packages)s});
    google.setOnLoadCallback(drawRegionsMap);
 
     function drawRegionsMap() {
       var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Country');
-      data.addColumn('number', 'Popularity');
+      %(column_snippet)s
       data.addRows(%(data)s);
 
       var options = %(options)s;
 
-      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.%(class_name)s(document.getElementById('chart_div'));
       chart.draw(data, options);
   };
   </script>
