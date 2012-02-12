@@ -24,7 +24,7 @@ def generate_chart_function(class_name, packages):
     
         # read template file
         module_path = os.path.dirname(__file__)
-        path = os.path.join(module_path, 'templates/geochart.html')
+        path = os.path.join(module_path, 'templates/simple_chart.html')
         f = open(path)        
         # generate final html
         html = f.read(-1) % substitution
