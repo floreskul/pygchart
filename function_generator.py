@@ -6,7 +6,8 @@ CHARTS_TYPES = {
 }
 
 class ChartFunctionGenerator(object):
-    '''Generator of the funcions that generate charts of different types.'''
+    '''Generator of the funcions that is used to draw
+    charts of different types.'''
     
     def __init__(self, wrapped_module):
         self.wrapped_module = wrapped_module
@@ -15,6 +16,6 @@ class ChartFunctionGenerator(object):
         charts = self.wrapped_module.charts
         if name in CHARTS_TYPES:
             class_name, package = CHARTS_TYPES[name]
-            return charts.generate_chart(class_name, [package])
+            return charts.generate_chart_function(class_name, [package])
         else:
             raise AttributeError(name)

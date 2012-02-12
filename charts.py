@@ -1,7 +1,10 @@
 import os
 
-def generate_chart(class_name, packages):
-    def chart(columns, data, options={}, style={'width' : 600, 'height' : 350}):
+def generate_chart_function(class_name, packages):
+    '''Generate function that is used to draw the chart of the given class.'''
+    def chart(columns, data, options={},
+                style={'width' : 600, 'height' : 350}):
+        '''Return html snippet that draws a chart.'''
     
         # replace collections and generators with lists
         data_with_lists = []
