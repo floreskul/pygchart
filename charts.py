@@ -1,6 +1,7 @@
 import os
 import webbrowser
 import tempfile
+import json
 
 def generate_chart_function(class_name, packages):
     '''Generate function that is used to draw the chart of the given class.'''
@@ -18,8 +19,8 @@ def generate_chart_function(class_name, packages):
             for column_type, name in columns]
         column_snippet = '\n'.join(column_lines)
     
-        data_and_options = {'data' : str(data_with_lists),
-            'options' : str(options), 'class_name' : class_name,
+        data_and_options = {'data' : json.dumps(data_with_lists, indent=4),
+            'options' : json.dumps(options, indent=4), 'class_name' : class_name,
             'packages' : packages, 'column_snippet' : column_snippet}
         # merge data, style and options
         substitution = dict(data_and_options.items() + style.items())

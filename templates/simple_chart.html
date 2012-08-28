@@ -7,10 +7,12 @@
 
     function drawRegionsMap() {
       var data = new google.visualization.DataTable();
-      %(column_snippet)s
-      data.addRows(%(data)s);
+// -- start of generated code
+%(column_snippet)s
+data.addRows(%(data)s);
 
-      var options = %(options)s;
+var options = %(options)s;
+// -- end of generated code
 
       var chart = new google.visualization.%(class_name)s(document.getElementById('chart_div'));
       chart.draw(data, options);

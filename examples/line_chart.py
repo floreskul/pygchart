@@ -9,8 +9,8 @@ if __name__ == '__main__':
               ['2007', 1030, 540]
             ]
     options = {
-        'width': 400,
-        'height': 240,
+        'width': 600,
+        'height': 320,
         'title': 'Company Performance'
         }
     print pygchart.linechart(columns, data, options)
