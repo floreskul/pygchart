@@ -13,4 +13,4 @@ if __name__ == '__main__':
         'height': 320,
         'title': 'Company Performance'
         }
-    print pygchart.linechart(columns, data, options)
+    pygchart.linechart(columns, data, options, chart_name='line_chart')

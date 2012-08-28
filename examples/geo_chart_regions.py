@@ -10,4 +10,4 @@ if __name__ == '__main__':
         ('France', 600),
         ('RU', 700)
     ]
-    print pygchart.geochart(columns, data)
+    pygchart.geochart(columns, data, chart_name='geo_chart_regions')

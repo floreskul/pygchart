@@ -17,4 +17,4 @@ if __name__ == '__main__':
           'displayMode': 'markers',
           'colorAxis': {'colors': ['green', 'blue'] }
           }
-    print pygchart.geochart(columns, data, options)
+    pygchart.geochart(columns, data, options, chart_name='geo_chart_markers')

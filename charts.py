@@ -6,7 +6,7 @@ import json
 def generate_chart_function(class_name, packages):
     '''Generate function that is used to draw the chart of the given class.'''
     def chart(columns, data, options={},
-                style={'width' : 600, 'height' : 350}):
+                style={'width' : 600, 'height' : 350}, chart_name='chart'):
         '''Return html snippet that draws a chart.'''
     
         # replace collections and generators with lists
@@ -33,8 +33,7 @@ def generate_chart_function(class_name, packages):
         html = f.read(-1) % substitution
         
         temporary_directory = tempfile.gettempdir()
-        
-        temporary_file = open(os.path.join(temporary_directory + 't.html'), 'w')
+        temporary_file = open(os.path.join(temporary_directory + chart_name + '.html'), 'w')
         temporary_file.write(html)
         webbrowser.open('file:///' + temporary_file.name)
         return html
