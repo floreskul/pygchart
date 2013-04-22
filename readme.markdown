@@ -1,6 +1,6 @@
 ##Python API for Google Chart Tools
 
-Library generates all the necessary html/js to simply visualize your data via Google Chart Tools.
+PyGChart generates all the necessary html/js to simply visualize your data via Google Chart Tools.
 
 #### Usage
 
